@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   width="640"
+   height="480"
+   version="1.0"
+   sodipodi:docname="level_data.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective9" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="722"
+     inkscape:window-width="1024"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="true"
+     inkscape:zoom="1.2219689"
+     inkscape:cx="295.19034"
+     inkscape:cy="257.49895"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:current-layer="layer2">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2389"
+       visible="true"
+       enabled="true"
+       color="#000080"
+       opacity="0.11764706"
+       empcolor="#000080"
+       empopacity="0.35294118"
+       spacingx="8px"
+       spacingy="8px"
+       empspacing="4"
+       dotted="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="lua.obstacle">
+    <path
+       style="fill:#000000;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196081000000004"
+       d="M 0,0 L 640,0 L 640,96 L 0,96 L 0,0 z"
+       id="path2402" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196081000000004"
+       d="M 576,0 L 640,0 L 640,480 L 576,480 L 576,0 z"
+       id="path2404" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196081000000004"
+       d="M 640,384 L 640,480 L 0,480 L 0,384 L 640,384 z"
+       id="path2406" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196081000000004"
+       d="M 0,0 L 64,0 L 64,480 L 0,480 L 0,0 z"
+       id="path2408" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 32,160 L 128,64 L 32,64 L 32,160 z"
+       id="path3200" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 128,64 L 224,160 L 320,64 L 128,64 z"
+       id="path3202" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 112,160 L 112,336 L 176,336 L 176,192 L 112,160 z"
+       id="path3204" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 176,192 L 224,240 L 160,240 L 160,192 L 176,192 z"
+       id="path3206" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 160,224 L 320,224 L 320,320 L 176,336 L 160,224 z"
+       id="path3208"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 272,240 L 320,192 L 448,224 L 448,256 L 272,240 z"
+       id="path3210" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 448,80 L 608,160 L 608,80 L 448,80 z"
+       id="path3212" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 416,224 L 512,224 L 512,320 L 416,224 z"
+       id="path3214" />
+    <path
+       style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 448,400 L 416,320 L 368,288 L 368,400 L 448,400 z"
+       id="path3216" />
+  </g>
+</svg>
