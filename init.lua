@@ -9,8 +9,10 @@ kernel.start_main_loop(game.make_game(
   {'draw_setup', 'draw', 'draw_debug'},
   function (game)
     game.init_component('exit_handler')
+    game.exit_handler.trap_esc = true
     game.init_component('keyboard')
     game.init_component('opengl_2d')
+    game.opengl_2d.background_color = {1, 1, 1}
 
     game.init_component('blueprints')
     game.init_component('resources')
@@ -19,5 +21,5 @@ kernel.start_main_loop(game.make_game(
     game.level.load(loadfile('level_data.lua')())
 
     local player = game.actors.new(game.blueprints.player_ship,
-      {'transform', pos=v2(100, 100)})
+      {'transform', pos=v2(100, 120)})
   end))

@@ -45,8 +45,8 @@ game.actors.new_generic('collision', function ()
     for _, o in ipairs(obstacles) do
       gl.glPushMatrix()
       gl.glTranslated(o.transform.pos.x, o.transform.pos.y, 0)
-      gl.glColor3d(0.5, 0, 1)
-      gl.glBegin(gl.GL_LINE_LOOP)
+      gl.glColor3d(0.7, 0.5, 0.5)
+      gl.glBegin(gl.GL_POLYGON)
       for _, v in ipairs(o.collider.poly.vertices) do
         gl.glVertex2d(v.x, v.y)
       end
