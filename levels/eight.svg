@@ -50,12 +50,12 @@
      pagecolor="#ffffff"
      id="base"
      showgrid="true"
-     inkscape:zoom="1"
-     inkscape:cx="333.2718"
-     inkscape:cy="226.45842"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="401.67109"
+     inkscape:cy="204.42427"
      inkscape:window-x="0"
      inkscape:window-y="25"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true">
     <inkscape:grid
@@ -149,5 +149,20 @@
        style="fill:#000000;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
        d="M 32,376 L 112,376 L 416,448 L 32,448 L 32,376 z"
        id="path2758" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="checkpoints">
+    <path
+       style="fill:#0000ff;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196078000000000"
+       d="M 48,128 L 128,128 L 128,208 L 48,208 L 48,128 z"
+       id="path2397"
+       inkscape:label="lua.checkpoint-1" />
+    <path
+       style="fill:#0000ff;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
+       d="M 512,272 L 592,272 L 592,352 L 512,352 L 512,272 z"
+       id="path3169"
+       inkscape:label="lua.checkpoint-2" />
   </g>
 </svg>

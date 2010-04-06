@@ -11,4 +11,10 @@ player_ship = game.make_blueprint('player_ship',
 
 obstacle = game.make_blueprint('obstacle',
   {'transform'},
-  {'collider', class='obstacle'})
+  {'collider', class='obstacle'},
+  {'collider_renderer', color={0.7, 0.5, 0.5}})
+
+checkpoint = game.make_blueprint('checkpoint',
+  {'transform'},
+  {'collider', class='checkpoint'},
+  {'collider_renderer', color={0, 0, 1, 0.1}})

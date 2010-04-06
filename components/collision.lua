@@ -2,17 +2,17 @@ local gl = require 'gl'
 local collision = require 'dokidoki.collision'
 local v2 = require 'dokidoki.v2'
 
--- TODO: remove dead stuff
-
 local ships = {}
 local obstacles = {}
+local checkpoints = {}
 
 function add_collider(actor)
   if actor.collider.class == 'ship' then
     table.insert(ships, actor)
   elseif actor.collider.class == 'obstacle' then
     table.insert(obstacles, actor)
-    -- todo: index
+  elseif actor.collider.class == 'checkpoint' then
+    table.insert(checkpoints, actor)
   else
     error('unknown collision type: ' .. actor.collider.class)
   end
@@ -39,20 +39,6 @@ game.actors.new_generic('collision', function ()
           set_body(body1, s)
         end
       end
-    end
-  end
-  function draw_debug()
-    for _, o in ipairs(obstacles) do
-      gl.glPushMatrix()
-      gl.glTranslated(o.transform.pos.x, o.transform.pos.y, 0)
-      gl.glColor3d(0.7, 0.5, 0.5)
-      gl.glBegin(gl.GL_POLYGON)
-      for _, v in ipairs(o.collider.poly.vertices) do
-        gl.glVertex2d(v.x, v.y)
-      end
-      gl.glEnd()
-      gl.glColor3d(1, 1, 1)
-      gl.glPopMatrix()
     end
   end
 end)

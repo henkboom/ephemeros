@@ -1,3 +1,4 @@
+local gl = require 'gl'
 local collision = require 'dokidoki.collision'
 
 assert(class, 'missing class argument')
