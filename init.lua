@@ -18,7 +18,7 @@ kernel.start_main_loop(game.make_game(
     game.init_component('resources')
     game.init_component('collision')
     game.init_component('level')
-    game.level.load(loadfile('level_data.lua')())
+    game.level.load(loadfile(arg[1] or 'levels/eight.lua')())
 
     local player = game.actors.new(game.blueprints.player_ship,
       {'transform', pos=v2(100, 120)})
