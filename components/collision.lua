@@ -19,7 +19,7 @@ function add_collider(actor)
 end
 
 game.actors.new_generic('collision', function ()
-  function update()
+  function collision_check()
     local function set_body(body, actor)
       body.pos = actor.transform.pos
       body.facing = actor.transform.facing
