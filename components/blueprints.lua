@@ -7,7 +7,8 @@ player_ship = game.make_blueprint('player_ship',
   {'sprite', resource='ship_sprite'},
   {'collider', class='ship', poly=collision.make_rectangle(12, 8)},
   {'player_ship_control'},
-  {'ship'})
+  {'ship'},
+  {'real_ship'})
 
 obstacle = game.make_blueprint('obstacle',
   {'transform'},
@@ -17,4 +18,5 @@ obstacle = game.make_blueprint('obstacle',
 checkpoint = game.make_blueprint('checkpoint',
   {'transform'},
   {'collider', class='checkpoint'},
-  {'collider_renderer', color={0, 0, 1, 0.1}})
+  {'collider_renderer', color={0, 0, 1, 0.1}},
+  {'checkpoint'})

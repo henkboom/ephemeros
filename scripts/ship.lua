@@ -68,11 +68,14 @@ function update()
   boost_duration = math.max(boost_duration - 1, 0)
 end
 
-function self.collider.on_collide(normal)
-  local normal_vel = v2.project(vel, normal)
+game.collision.add_collider(self, 'obstacle', function (other, correction)
+  self.transform.pos = self.transform.pos + correction
+
+  local normal_vel = v2.project(vel, correction)
   local tangent_vel = vel - normal_vel
-  if v2.dot(normal_vel, normal) < 0 then
+  if v2.dot(normal_vel, correction) < 0 then
     vel = -0.2 * normal_vel +
           damp_v2(tangent_vel, v2.mag(normal_vel)*0.75, 1)
   end
-end
+end)
+

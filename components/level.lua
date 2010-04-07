@@ -8,6 +8,9 @@ local function data_to_polygon(data)
 end
 
 function load(level)
+  -- {{name, checkpoint}...}
+  local checkpoints = {}
+
   for _, data in ipairs(level) do
     if data.type == 'obstacle' then
       local pos, poly = data_to_polygon(data)
@@ -18,7 +21,15 @@ function load(level)
       local pos, poly = data_to_polygon(data)
       local checkpoint = game.actors.new(game.blueprints.checkpoint,
         {'transform', pos=pos},
-        {'collider', poly=poly, on_collide=function () end})
+        {'collider', poly=poly})
+      table.insert(checkpoints, {data.type, checkpoint})
     end
+  end
+
+  table.sort(checkpoints, function (a, b) return a[1] < b[1] end)
+  for i = 1, #checkpoints do
+    local next_i = (i == #checkpoints) and 1 or i+1
+    table.foreach(checkpoints[i], print)
+    checkpoints[i][2].checkpoint.next = checkpoints[next_i][2]
   end
 end
