@@ -51,8 +51,8 @@
      id="base"
      showgrid="true"
      inkscape:zoom="1.4142136"
-     inkscape:cx="401.67109"
-     inkscape:cy="204.42427"
+     inkscape:cx="296.31218"
+     inkscape:cy="256.04306"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:current-layer="layer1"
@@ -156,13 +156,15 @@
      inkscape:label="checkpoints">
     <path
        style="fill:#0000ff;fill-opacity:0.25098041;stroke:#000000;stroke-opacity:0.50196078000000000"
-       d="M 48,128 L 128,128 L 128,208 L 48,208 L 48,128 z"
+       d="M 32,128 L 48,144 L 48,248 L 32,264 L 32,128 z"
        id="path2397"
-       inkscape:label="lua.checkpoint-1" />
+       inkscape:label="lua.checkpoint-1"
+       sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#0000ff;fill-opacity:0.25098039;stroke:#000000;stroke-opacity:0.50196078"
-       d="M 512,272 L 592,272 L 592,352 L 512,352 L 512,272 z"
+       d="M 592,232 L 608,216 L 608,352 L 592,336 L 592,232 z"
        id="path3169"
-       inkscape:label="lua.checkpoint-2" />
+       inkscape:label="lua.checkpoint-2"
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>
