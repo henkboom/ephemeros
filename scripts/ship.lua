@@ -24,6 +24,22 @@ local function damp_v2(vect, scalar, multiplier)
   end
 end
 
+function get_state()
+  return {
+    pos = self.transform.pos,
+    facing = self.transform.facing,
+    vel = vel,
+    buffered_turn = buffered_turn
+  }
+end
+
+function set_state(state)
+  self.transform.pos = state.pos
+  self.transform.facing = state.facing
+  vel = state.vel
+  buffered_turn = state.buffered_turn
+end
+
 function update()
   -- rotation
   buffered_turn = buffered_turn * 0.90 + controls.turn * 0.10
