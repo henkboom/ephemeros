@@ -2,7 +2,7 @@ local gl = require 'gl'
 
 assert(color, 'missing color argument')
 
-function draw_debug()
+function draw()
   gl.glPushMatrix()
   gl.glTranslated(self.transform.pos.x, self.transform.pos.y, 0)
   local f = self.transform.facing

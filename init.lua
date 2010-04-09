@@ -16,6 +16,7 @@ kernel.start_main_loop(game.make_game(
 
     game.init_component('blueprints')
     game.init_component('resources')
+    game.init_component('debug')
     game.init_component('collision')
     game.init_component('level')
     game.level.load(loadfile(arg[1] or 'levels/eight.lua')())
