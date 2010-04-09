@@ -9,8 +9,6 @@ controls = {
 
 local vel = v2(0, 0)
 local buffered_turn = 0
-local brake_duration = 0
-local boost_duration = 0
 
 local function damp(value, scalar, multiplier)
   local sign = value > 0 and 1 or -1
