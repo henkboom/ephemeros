@@ -29,7 +29,6 @@ function load(level)
   table.sort(checkpoints, function (a, b) return a[1] < b[1] end)
   for i = 1, #checkpoints do
     local next_i = (i == #checkpoints) and 1 or i+1
-    table.foreach(checkpoints[i], print)
     checkpoints[i][2].checkpoint.next = checkpoints[next_i][2]
   end
 end
