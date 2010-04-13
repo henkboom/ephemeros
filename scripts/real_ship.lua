@@ -1,4 +1,5 @@
 local gl = require 'gl'
+local v2 = require 'dokidoki.v2'
 
 --TODO: better
 local next_checkpoint = game.actors.get('checkpoint')[1]
@@ -17,3 +18,11 @@ game.collision.add_collider(self, 'checkpoint', function (other, correction)
   end
 end)
 
+game.collision.add_collider(self, 'obstacle', function (other, correction)
+  self.ship.collide(correction, v2.zero)
+  self.recorder.record_collision(correction, v2.zero)
+end)
+game.collision.add_collider(self, 'ghost_ship', function (other, correction)
+  self.ship.collide(correction, other.ship.vel)
+  self.recorder.record_collision(correction, other.ship.vel)
+end)

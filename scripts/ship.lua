@@ -7,7 +7,8 @@ controls = {
   turn = 0,
 }
 
-local vel = v2(0, 0)
+vel = v2(0, 0)
+
 local buffered_turn = 0
 
 local function damp(value, scalar, multiplier)
@@ -60,14 +61,15 @@ function update()
   self.transform.pos = self.transform.pos + vel
 end
 
-game.collision.add_collider(self, 'obstacle', function (other, correction)
-  self.transform.pos = self.transform.pos + correction
+function collide (correction, collision_vel)
+  self.transform.pos = self.transform.pos + correction * 0.1
 
-  local normal_vel = v2.project(vel, correction)
-  local tangent_vel = vel - normal_vel
+  local relative_vel = vel - collision_vel
+  local normal_vel = v2.project(relative_vel, correction)
+  local tangent_vel = relative_vel - normal_vel
   if v2.dot(normal_vel, correction) < 0 then
-    vel = -0.2 * normal_vel +
-          damp_v2(tangent_vel, v2.mag(normal_vel)*0.75, 1)
+    vel = collision_vel - 0.2 * normal_vel
+          + damp_v2(tangent_vel, v2.mag(normal_vel)*0.75, 1)
   end
-end)
+end
 

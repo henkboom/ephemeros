@@ -1,11 +1,11 @@
 assert(recording, 'missing recording argument')
 
-local time = 1
+local time
 
 function update()
+  time = (time or 0) + 1
+
   if not recording[time] then
-    --self.dead = true
-    --return
     time = 1
   end
 
@@ -17,5 +17,14 @@ function update()
     self.ship.controls[k] = v
   end
 
-  time = time + 1
+end
+
+function collision_check()
+  if time then
+    if recording[time].collisions then
+      for _, args in ipairs(recording[time].collisions) do
+        self.ship.collide(unpack(args))
+      end
+    end
+  end
 end
