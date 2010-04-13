@@ -10,13 +10,19 @@ game.collision.add_collider(self, 'checkpoint', function (other, correction)
     next_checkpoint.checkpoint.deactivate()
     next_checkpoint = other.checkpoint.next
     next_checkpoint.checkpoint.activate()
+  end
+end)
 
+time = 0
+function update()
+  time = time + 1
+  if time % 60 == 0 then
     game.actors.new(game.blueprints.ghost_ship,
       {'ghost_ship_control', recording=self.recorder.get_recording()})
 
     self.recorder.reset_recording()
   end
-end)
+end
 
 game.collision.add_collider(self, 'obstacle', function (other, correction)
   self.ship.collide(correction, v2.zero)

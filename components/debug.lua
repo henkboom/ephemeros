@@ -2,7 +2,6 @@ local gl = require 'gl'
 local kernel = require 'dokidoki.kernel'
 local graphics = require 'dokidoki.graphics'
 
-
 local font = (require 'dokidoki.default_font').load()
 
 game.actors.new_generic('debug', function ()
