@@ -26,5 +26,4 @@ obstacle = game.make_blueprint('obstacle',
 checkpoint = game.make_blueprint('checkpoint',
   {'transform'},
   {'collider'},
-  {'collider_renderer', color={0, 0, 1, 0.1}},
   {'checkpoint'})
