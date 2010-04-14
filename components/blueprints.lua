@@ -7,9 +7,9 @@ player_ship = game.make_blueprint('player_ship',
   {'sprite', resource='ship_sprite'},
   {'collider', poly=collision.make_rectangle(12, 8)},
   {'player_ship_control'},
+  {'real_ship'},
   {'recorder'},
-  {'ship'},
-  {'real_ship'})
+  {'ship'})
 
 ghost_ship = game.make_blueprint('ghost_ship',
   {'transform'},
