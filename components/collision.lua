@@ -2,6 +2,8 @@ local gl = require 'gl'
 local collision = require 'dokidoki.collision'
 local v2 = require 'dokidoki.v2'
 
+-- TODO remove dead colliders
+
 -- keeps track of actors which should be notified of collisions with certain
 -- tags
 -- {tag -> {{actor, callback}...}}
