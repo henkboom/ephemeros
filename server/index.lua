@@ -71,7 +71,7 @@ do
 
     get_rank:bind_names{id = parent_id}
     local parent = first(get_rank:nrows())
-    local rank = parent and parent.id or 1
+    local rank = parent and parent.rank+1 or 1
 
     local sql = [[
       INSERT INTO ghosts (name, parent_id, rank, frame_count, data)

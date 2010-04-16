@@ -46,7 +46,6 @@ game.actors.new_generic('obstacle_drawing_setup', function ()
   end
 
   function draw_terrain()
-    print 'terrain'
     local w = game.opengl_2d.width
     local h = game.opengl_2d.height
 
