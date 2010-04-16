@@ -32,3 +32,35 @@ function load(level)
     checkpoints[i][2].checkpoint.next = checkpoints[next_i][2]
   end
 end
+
+game.actors.new_generic('obstacle_drawing_setup', function ()
+  local gl = require 'gl'
+
+  function draw_obstacles ()
+    gl.glEnable(gl.GL_DEPTH_TEST)
+    gl.glDepthFunc(gl.GL_ALWAYS)
+    gl.glColorMask(false, false, false, false)
+
+    gl.glClearDepth(1.0)
+    gl.glClear(gl.GL_DEPTH_BUFFER_BIT)
+  end
+
+  function draw_terrain()
+    print 'terrain'
+    local w = game.opengl_2d.width
+    local h = game.opengl_2d.height
+
+    gl.glDepthFunc(gl.GL_LEQUAL)
+    gl.glColorMask(true, true, true, true)
+
+    gl.glColor4d(1, 1, 1, 0.5)
+    gl.glBegin(gl.GL_QUADS)
+    gl.glVertex2d(0, 0)
+    gl.glVertex2d(w, 0)
+    gl.glVertex2d(w, h)
+    gl.glVertex2d(0, h)
+    gl.glEnd()
+    gl.glColor3d(1, 1, 1)
+    gl.glDisable(gl.GL_DEPTH_TEST)
+  end
+end)
