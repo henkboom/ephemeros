@@ -34,12 +34,14 @@ game.actors.new_generic('collision', function ()
         set_body(body1, colliding_actor)
         -- for every actor with the tag
         for _, tagged_actor in ipairs(tagged_actors) do
-          set_body(body2, tagged_actor)
+          if colliding_actor ~= tagged_actor then
+            set_body(body2, tagged_actor)
 
-          -- collision check!
-          local correction = collision.collide(body1, body2)
-          if correction then
-            callback(tagged_actor, correction)
+            -- collision check!
+            local correction = collision.collide(body1, body2)
+            if correction then
+              callback(tagged_actor, correction)
+            end
           end
         end
       end
