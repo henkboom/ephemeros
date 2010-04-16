@@ -1,5 +1,5 @@
 assert(recording, 'missing recording argument')
-assert(rank, 'missing rank argument')
+rank = recording.get_rank()
 
 local time
 
