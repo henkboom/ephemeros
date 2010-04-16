@@ -16,6 +16,7 @@ game.actors.new_generic('game_flow', function ()
   local kernel = require 'dokidoki.kernel'
 
   local ghost = require 'ghost'
+  local race = require 'race'
 
   local ghosts = {}
   local parent_id
@@ -54,7 +55,7 @@ game.actors.new_generic('game_flow', function ()
       print('sending player ghost...')
       print(http.request('http://localhost/miniracer/', data))
       print('done sending')
-      error('exit')
+      kernel.switch_scene(race.make())
     end
     time = time + 1
   end
