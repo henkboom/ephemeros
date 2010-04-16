@@ -78,4 +78,3 @@ end
 game.collision.add_collider(self, 'obstacle', function (other, correction)
   self.ship.collide(correction, v2.zero)
 end)
-
