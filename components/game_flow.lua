@@ -1,9 +1,9 @@
 local v2 = require 'dokidoki.v2'
 
-local GHOST_OFFSET_TIME = 30
-local TOTAL_TIME = 60 * 10
+local GHOST_OFFSET_TIME = 20
+local TOTAL_TIME = 60 * 20
 local INITIAL_STATE = {
-  pos = v2(100, 120),
+  pos = v2(250, 250),
   facing = v2(1, 0),
   vel = v2(0, 0),
   buffered_turn = 0

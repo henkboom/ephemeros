@@ -2,6 +2,8 @@ local base = require 'dokidoki.base'
 local collision = require 'dokidoki.collision'
 local v2 = require 'dokidoki.v2'
 
+---- level loading stuff ----
+
 local function data_to_polygon(data)
   local points = base.imap(function (p) return v2(unpack(p)) end, data)
   return collision.points_to_polygon(points)
@@ -33,6 +35,14 @@ function load(level)
   end
 end
 
+---- drawing stuff ----
+
+local RADIUS = 100
+local CIRCLE = {}
+for i = 1, 8 do
+  table.insert(CIRCLE, v2.unit(i/8*2*math.pi) * RADIUS)
+end
+
 game.actors.new_generic('obstacle_drawing_setup', function ()
   local gl = require 'gl'
 
@@ -41,8 +51,18 @@ game.actors.new_generic('obstacle_drawing_setup', function ()
     gl.glDepthFunc(gl.GL_ALWAYS)
     gl.glColorMask(false, false, false, false)
 
-    gl.glClearDepth(1.0)
+    gl.glClearDepth(0.0) -- min depth
     gl.glClear(gl.GL_DEPTH_BUFFER_BIT)
+
+    -- mark out the places we can draw
+    for _, s in ipairs(game.actors.get('ship')) do
+      local x, y = v2.coords(s.transform.pos)
+      gl.glBegin(gl.GL_POLYGON)
+      for _, v in ipairs(CIRCLE) do
+        gl.glVertex2d(x+v.x, y+v.y)
+      end
+      gl.glEnd()
+    end
   end
 
   function draw_terrain()
@@ -54,7 +74,17 @@ game.actors.new_generic('obstacle_drawing_setup', function ()
 
     gl.glColor4d(1, 1, 1, 0.5)
     game.resources.terrain:draw()
+
+    for _, s in ipairs(game.actors.get('ship')) do
+      local x, y = v2.coords(s.transform.pos)
+      gl.glBegin(gl.GL_POLYGON)
+      for _, v in ipairs(CIRCLE) do
+        gl.glVertex2d(x+v.x*0.7, y+v.y*0.7)
+      end
+      gl.glEnd()
+    end
     gl.glColor3d(1, 1, 1)
     gl.glDisable(gl.GL_DEPTH_TEST)
+
   end
 end)

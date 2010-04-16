@@ -9,11 +9,12 @@ function make()
     {'draw_setup', 'draw_obstacles', 'draw_terrain', 'draw', 'draw_transitions',
      'draw_debug'},
     function (game)
+      math.randomseed(os.time())
       game.init_component('exit_handler')
       game.exit_handler.trap_esc = true
       game.init_component('keyboard')
       game.init_component('opengl_2d')
-      game.opengl_2d.background_color = {1, 1, 1}
+      game.opengl_2d.background_color = {0, 0, 0}
       game.opengl_2d.width = 1024
       game.opengl_2d.height = 768
 

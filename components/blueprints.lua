@@ -4,7 +4,7 @@ local v2 = require 'dokidoki.v2'
 
 player_ship = game.make_blueprint('player_ship',
   {'transform'},
-  {'sprite', resource='ship_sprite'},
+  {'sprite', resource='ship_sprite', color={0, 0, 0}},
   {'collider', poly=collision.make_rectangle(12, 8)},
   {'player_ship_control'},
   {'real_ship'},
@@ -13,7 +13,7 @@ player_ship = game.make_blueprint('player_ship',
 
 ghost_ship = game.make_blueprint('ghost_ship',
   {'transform'},
-  {'sprite', resource='ship_sprite', color={1, 1, 1, 0.5}},
+  {'sprite', resource='ship_sprite', color={0, 0, 0, 0.25}},
   {'collider', poly=collision.make_rectangle(12, 8)},
   {'ghost_ship_control'},
   {'ship'})
