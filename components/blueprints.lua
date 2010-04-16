@@ -27,3 +27,7 @@ checkpoint = game.make_blueprint('checkpoint',
   {'transform'},
   {'collider'},
   {'checkpoint'})
+
+background = game.make_blueprint('background',
+  {'transform'},
+  {'sprite', resource='background'})
