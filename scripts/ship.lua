@@ -4,7 +4,8 @@ self.tags.ship = true
 
 -- controls access
 controls = {
-  turn = 0,
+  left = 0,
+  right = 0
 }
 
 vel = v2(0, 0)
@@ -43,7 +44,8 @@ end
 
 function update()
   -- rotation
-  buffered_turn = buffered_turn * 0.90 + controls.turn * 0.10
+  local turn = (controls.left and 1 or 0) - (controls.right and 1 or 0)
+  buffered_turn = buffered_turn * 0.90 + turn * 0.10
   self.transform.facing =
     v2.norm(v2.rotate(self.transform.facing, buffered_turn * 0.07))
 

@@ -1,7 +1,14 @@
 local base = require 'dokidoki.base'
 
+local ghost = require 'ghost'
+
 local recording
 local time
+
+local function reset_recording()
+  recording = ghost.make_ghost(self.ship.get_state())
+  time = 0
+end
 
 function update()
   if not recording then
@@ -10,15 +17,12 @@ function update()
 
   time = time + 1
 
-  recording[time] = base.copy(self.ship.controls)
+  recording.add_frame(self.ship.controls)
 end
 
-function get_recording()
-  return base.copy(recording)
+-- gets and resets recording
+function cut_recording()
+  local ret = recording
+  reset_recording()
+  return ret
 end
-
-function reset_recording()
-  recording = {initial_state = self.ship.get_state()}
-  time = 0
-end
-

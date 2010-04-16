@@ -19,11 +19,9 @@ function update()
   if time > 0 and time % 60 == 0 then
     game.actors.new(game.blueprints.ghost_ship,
       {'ghost_ship_control',
-       recording=self.recorder.get_recording(),
+       recording=self.recorder.cut_recording(),
        rank=next_rank})
     next_rank = next_rank + 1
-
-    self.recorder.reset_recording()
   end
 
   time = time + 1
