@@ -8,11 +8,13 @@ local INITIAL_STATE = {
   vel = v2(0, 0),
   buffered_turn = 0
 }
+local FADE_TIME = 30
 
 game.actors.new_generic('game_flow', function ()
   local http = require 'socket.http'
-
+  local gl = require 'gl'
   local kernel = require 'dokidoki.kernel'
+
   local ghost = require 'ghost'
 
   local ghosts = {}
@@ -55,5 +57,20 @@ game.actors.new_generic('game_flow', function ()
       error('exit')
     end
     time = time + 1
+  end
+
+  function draw_transitions()
+    local visibility = math.min(time, (TOTAL_TIME - 1 - time)) / FADE_TIME
+    if visibility < 1 then
+      local w, h = game.opengl_2d.width, game.opengl_2d.height
+      gl.glColor4d(0, 0, 0, 1-visibility)
+      gl.glBegin(gl.GL_QUADS)
+      gl.glVertex2d(0, 0)
+      gl.glVertex2d(w, 0)
+      gl.glVertex2d(w, h)
+      gl.glVertex2d(0, h)
+      gl.glEnd()
+      gl.glColor3d(1, 1, 1)
+    end
   end
 end)

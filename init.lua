@@ -4,9 +4,12 @@ local kernel = require 'dokidoki.kernel'
 local game = require 'dokidoki.game'
 local v2 = require 'dokidoki.v2'
 
+--kernel.set_fullscreen(true)
+kernel.set_video_mode(1024, 768)
 kernel.start_main_loop(game.make_game(
   {'update_setup', 'update', 'collision_check', 'update_cleanup'},
-  {'draw_setup', 'draw_obstacles', 'draw_terrain', 'draw', 'draw_debug'},
+  {'draw_setup', 'draw_obstacles', 'draw_terrain', 'draw', 'draw_transitions',
+   'draw_debug'},
   function (game)
     game.init_component('exit_handler')
     game.exit_handler.trap_esc = true
