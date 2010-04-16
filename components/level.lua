@@ -53,12 +53,7 @@ game.actors.new_generic('obstacle_drawing_setup', function ()
     gl.glColorMask(true, true, true, true)
 
     gl.glColor4d(1, 1, 1, 0.5)
-    gl.glBegin(gl.GL_QUADS)
-    gl.glVertex2d(0, 0)
-    gl.glVertex2d(w, 0)
-    gl.glVertex2d(w, h)
-    gl.glVertex2d(0, h)
-    gl.glEnd()
+    game.resources.terrain:draw()
     gl.glColor3d(1, 1, 1)
     gl.glDisable(gl.GL_DEPTH_TEST)
   end
