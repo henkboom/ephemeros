@@ -12,6 +12,8 @@ end
 
 ---- MODEL --------------------------------------------------------------------
 
+local MAX_CHAIN = 10
+
 do
   model = {}
 
@@ -36,12 +38,13 @@ do
   function model.get_racers()
     local db = connect()
 
-    local ghost = first(db:nrows [[
+    local ghost = first(db:nrows([[
       SELECT * FROM ghosts
       WHERE id NOT IN (SELECT parent_id FROM ghosts)
+         AND rank < ]] .. MAX_CHAIN .. [[
       ORDER BY RANDOM()
       LIMIT 1;
-    ]])
+    ]]))
 
     if not ghost then
       return false
@@ -92,13 +95,15 @@ do
       SELECT * FROM ghosts;
     ]]
 
+    print('--------')
     for ghost in stmt:nrows() do
       io.write(string.format('id:%i\tname:%s\tparent_id:%i\trank:%i\tframes:%i ',
         ghost.id, ghost.name, ghost.parent_id, ghost.rank, ghost.frame_count))
+      io.write('0x')
       for i = 1, #ghost.data do
         io.write(string.format('%.2x', ghost.data:sub(i, i):byte()))
       end
-      print('')
+      print('\n--------')
     end
   end
 end
