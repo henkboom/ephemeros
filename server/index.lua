@@ -48,7 +48,7 @@ do
     end
 
     local get_ghost = db:prepare [[
-      SELECT * FROM ghosts WHERE ghosts.id = :id LIMIT 1;
+      SELECT * FROM ghosts WHERE id = :id LIMIT 1;
     ]]
 
     local racers = {}
@@ -56,6 +56,7 @@ do
     for i = ghost.rank-1, 1, -1 do
       get_ghost:bind_names{id = racers[i+1].parent_id}
       racers[i] = first(get_ghost:nrows())
+      get_ghost:reset()
     end
     return racers
   end
@@ -121,8 +122,6 @@ do
     else
       io.write('0:')
     end
-  
-  
   end
   
   function api.show_test_form()
