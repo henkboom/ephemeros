@@ -1,5 +1,6 @@
 require 'dokidoki.module' [[ make ]]
 
+local glfw = require 'glfw'
 local game = require 'dokidoki.game'
 local v2 = require 'dokidoki.v2'
 
@@ -9,6 +10,7 @@ function make()
     {'draw_setup', 'draw_obstacles', 'draw_terrain', 'draw', 'draw_transitions',
      'draw_debug'},
     function (game)
+      glfw.SetWindowTitle('Ephemeros')
       math.randomseed(os.time())
       game.init_component('exit_handler')
       game.exit_handler.trap_esc = true
