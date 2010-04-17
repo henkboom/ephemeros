@@ -27,7 +27,7 @@ function make()
       game.actors.new(game.blueprints.background)
 
       game.init_component('level')
-      game.level.load(loadfile(arg[1] or 'levels/long.lua')())
+      game.level.load(loadfile('levels/long.lua')())
 
       game.init_component('game_flow')
       collectgarbage('collect')
