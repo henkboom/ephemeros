@@ -1,5 +1,5 @@
-NAME=miniracer
-APPNAME=MiniRacer
+NAME=ephemeros
+APPNAME=Ephemeros
 
 PLATFORMS=linux macosx mingw
 
