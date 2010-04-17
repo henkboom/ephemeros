@@ -35,4 +35,5 @@ $(APPNAME).app: macosx Info.plist
 	cp /usr/local/lib/libportaudio.dylib $@/Contents/Frameworks/
 
 $(APPNAME).dmg: $(APPNAME).app
+	rm -rf $@
 	hdiutil create -srcfolder $^ $@
