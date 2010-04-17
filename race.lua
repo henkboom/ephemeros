@@ -21,7 +21,7 @@ function make()
       game.init_component('camera')
       game.init_component('blueprints')
       game.init_component('resources')
-      game.init_component('debug')
+      --game.init_component('debug')
       game.init_component('collision')
 
       game.actors.new(game.blueprints.background)
